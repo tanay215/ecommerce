@@ -10,7 +10,7 @@ const initialState = {
 export const registerUser = createAsyncThunk('/auth/register',
     async(formData, { rejectWithValue }) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/register', formData, {
+            const response = await axios.post('https://ecommerce-qqof.onrender.com/api/auth/register', formData, {
                 withCredentials: true,
             })
             return response.data
@@ -24,7 +24,7 @@ export const registerUser = createAsyncThunk('/auth/register',
 export const loginUser = createAsyncThunk('/auth/login',
     async(formData, { rejectWithValue }) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/login', formData, {
+            const response = await axios.post('https://ecommerce-qqof.onrender.com/api/auth/login', formData, {
                 withCredentials: true,
             })
             return response.data
@@ -40,7 +40,7 @@ export const checkAuth = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/auth/check-auth", // ← remove the double “//”
+        "https://ecommerce-qqof.onrender.com/api/auth/check-auth", // ← remove the double “//”
         {
           withCredentials: true,
           headers: {
